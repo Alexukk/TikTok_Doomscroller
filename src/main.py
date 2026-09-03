@@ -28,6 +28,10 @@ while True:
         break
     elif key == ord("s"):
         config.SHOW_STATS = (not config.SHOW_STATS)
+    elif key == ord('f'):
+        config.SHOW_FPS = not config.SHOW_FPS
+    elif key == ord('v'):
+        config.SHOW_VERSION = not config.SHOW_VERSION
 
     current_time = time.time()
 
@@ -60,15 +64,14 @@ while True:
         fingers[4] = 1 if get_distance(p[0], p[20]) > std_distance  else 0
         fingers[0] = 1 if get_distance(p[4], p[17]) > std_distance  else 0
 
-        # Debug & General data overlay
+    # Debug & General data overlay
     if config.SHOW_FPS:
         fps: float = 1 / (current_time - previous_time)
-        cv2.putText(img, f"Fps: {int(fps)}", (config.TOP_LEFT_ROW_2 if config.SHOW_VERSION else config.TOP_LEFT_ROW_1),cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 0.8, (114, 84, 14), 2)
+        cv2.putText(img, f"Fps: {int(fps)}", (config.TOP_LEFT_ROW_2 if config.SHOW_VERSION else config.TOP_LEFT_ROW_1),cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 0.8, config.NAVY_BLUE, 2)
         previous_time = current_time
 
     if config.SHOW_VERSION:
-        cv2.putText(img, f"Version: {config.VERSION}", config.TOP_LEFT_ROW_1, cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 1, (86, 37, 222), 4)
-
+        cv2.putText(img, f"Version: {config.VERSION}", config.TOP_LEFT_ROW_1, cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 1, config.RED, 4)
     if config.SHOW_STATS:
         show_stats(img, begin_time, datetime.now(), 100)
     # Showing the frame
