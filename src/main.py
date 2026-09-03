@@ -49,10 +49,10 @@ while True:
                 p[id] = (cx, cy)
     if config.SHOW_FPS:
         fps: float = 1 / (current_time - previous_time)
-        cv2.putText(img, f"Fps: {int(fps)}", ((10, 40) if config.SHOW_VERSION else (10, 20)),cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 0.8, (114, 84, 14), 2)
+        cv2.putText(img, f"Fps: {int(fps)}", (config.TOP_LEFT_ROW_2 if config.SHOW_VERSION else config.TOP_LEFT_ROW_1),cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 0.8, (114, 84, 14), 2)
         previous_time = current_time
 
     if config.SHOW_VERSION:
-        cv2.putText(img, f"Version: {config.VERSION}", (10, 20), cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 1, (86, 37, 222), 4)
+        cv2.putText(img, f"Version: {config.VERSION}", config.TOP_LEFT_ROW_1, cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 1, (86, 37, 222), 4)
 
     cv2.imshow("TikTokDoomscroller", img)
