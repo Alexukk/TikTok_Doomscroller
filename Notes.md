@@ -11,4 +11,6 @@ BUTTONS:
 
 'q' - quit session
 's' - stats data
-'h' - help data
+'h' - help data // Coming later
+'f' - toggle fps
+'v' - toggle version

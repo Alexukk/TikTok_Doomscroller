@@ -56,7 +56,6 @@ while True:
 
         # Standard value for a closed finger
         std_distance = get_distance(p[0], p[5]) + get_distance(p[0], p[5])/2
-
         # Evaluating if finger is open or not
         fingers[1] = 1 if get_distance(p[0], p[8])  > std_distance  else 0
         fingers[2] = 1 if get_distance(p[0], p[12]) > std_distance  else 0
