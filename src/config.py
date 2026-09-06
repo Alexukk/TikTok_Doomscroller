@@ -21,3 +21,16 @@ TOP_LEFT_ROW_5=(10, 110)
 RED=(86, 37, 222)
 DARK_GREEN=(28, 105, 25)
 NAVY_BLUE=(114, 84, 14)
+
+
+
+# Gestures
+
+# Structure: ["NAME", int(id), [0, 0, 0, 0, 0] <- fingers position]
+GESTURES = [
+    ["Like",  1, [1, 0, 0, 0, 0]],
+    ["Down",  2, [0, 0, 0, 0, 1]],
+    ["Up",    3, [0, 1, 0, 0, 0]],
+    ["Close", 4, [0, 1, 1, 1, 1]], # First variation of opened palm
+    ["Close", 5, [1, 1, 1, 1, 1]]  # Second variation of opened palm (big finger glitches sometimes)
+]

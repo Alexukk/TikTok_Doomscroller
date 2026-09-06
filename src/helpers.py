@@ -19,3 +19,12 @@ def get_distance(p1, p2):
 
 def show_help(img):
     pass
+
+
+
+def process_gesture(gesture): # Takes an array of fingers activity
+    for i in config.GESTURES:
+        if i[2] == gesture:
+            name = i[0]
+            return name
+    return 0

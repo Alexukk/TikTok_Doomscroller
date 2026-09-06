@@ -2,9 +2,8 @@ import cv2
 import mediapipe as mp
 from browser_init import init_browser
 import config
-from src.helpers import show_stats, get_distance
+from src.helpers import show_stats, get_distance, process_gesture
 from datetime import datetime
-
 
 video = cv2.VideoCapture(0) # Initializing WebCam usage
 
@@ -19,6 +18,9 @@ if config.SHOW_FPS:
 
 previous_time = 0 # Necessary for fps
 begin_time = datetime.now() # necessary for stats
+
+current_gesture = [0, 0, 0, 0, 0]
+current_gesture_counter = 0
 
 # Main loop
 while True:
@@ -62,6 +64,16 @@ while True:
         fingers[3] = 1 if get_distance(p[0], p[16]) > std_distance  else 0
         fingers[4] = 1 if get_distance(p[0], p[20]) > std_distance  else 0
         fingers[0] = 1 if get_distance(p[4], p[17]) > std_distance  else 0
+
+        if fingers == current_gesture:
+            current_gesture_counter+=1
+            if current_gesture_counter >= 90:
+                current_gesture_counter = 0
+                print(process_gesture(current_gesture))
+        else:
+            current_gesture = fingers.copy()
+
+
 
     # Debug & General data overlay
     if config.SHOW_FPS:
