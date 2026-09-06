@@ -2,10 +2,9 @@ TODO:
 
 Add 'Hell yeah' gesture when toggled open some metal
 
-Add colors to config
+update requirements.txt
 
-Add h handler which shows each gesture and data about it 
-
+Add gesture toggler to display video with all stats and info
 
 BUTTONS:
 
@@ -14,3 +13,6 @@ BUTTONS:
 'h' - help data // Coming later
 'f' - toggle fps
 'v' - toggle version
+
+
+
