@@ -80,14 +80,15 @@ while True:
             if current_gesture_counter >= (config.RECOGNITION_SPEED_MULTIPLIER * 30):
                 current_gesture_counter = 0
                 name = process_gesture(tuple(current_gesture))
-                print(f"Name : {name}")
+                if name == "Close":
+                    exit(0)
+                elif name == "Reload":
+                    init_browser(config.TIKTOK_LINK)
         else:
             current_gesture = fingers.copy()
 
 
     # Debug & General data overlay
-
-    # Showing the frame
     if config.SHOW_WEBCAM:
         if config.SHOW_FPS:
             fps: float = 1 / (current_time - previous_time)
@@ -104,4 +105,5 @@ while True:
         if config.SHOW_HELP:
             show_help(img)
 
+        # Showing the frame
         cv2.imshow("TikTokDoomscroller", img)
