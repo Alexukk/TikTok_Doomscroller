@@ -23,8 +23,8 @@ def show_help(img):
 
 
 def process_gesture(gesture): # Takes an array of fingers activity
-    for i in config.GESTURES:
-        if i[2] == gesture:
-            name = i[0]
-            return name
-    return 0
+    try:
+        data = config.GESTURES_V2[gesture]
+    except Exception as e:
+        return "No gesture was matched"
+    return data

@@ -67,9 +67,10 @@ while True:
 
         if fingers == current_gesture:
             current_gesture_counter+=1
-            if current_gesture_counter >= 90:
+            if current_gesture_counter >= (config.RECOGNITION_SPEED_MULTIPLIER * 30):
                 current_gesture_counter = 0
-                print(process_gesture(current_gesture))
+                name = process_gesture(tuple(current_gesture))
+                print(f"Name : {name}")
         else:
             current_gesture = fingers.copy()
 

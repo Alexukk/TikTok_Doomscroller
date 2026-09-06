@@ -22,15 +22,24 @@ RED=(86, 37, 222)
 DARK_GREEN=(28, 105, 25)
 NAVY_BLUE=(114, 84, 14)
 
-
-
 # Gestures
 
 # Structure: ["NAME", int(id), [0, 0, 0, 0, 0] <- fingers position]
-GESTURES = [
+GESTURES_V1 = [
     ["Like",  1, [1, 0, 0, 0, 0]],
     ["Down",  2, [0, 0, 0, 0, 1]],
     ["Up",    3, [0, 1, 0, 0, 0]],
     ["Close", 4, [0, 1, 1, 1, 1]], # First variation of opened palm
     ["Close", 5, [1, 1, 1, 1, 1]]  # Second variation of opened palm (big finger glitches sometimes)
 ]
+
+
+GESTURES_V2 ={  (1, 0, 0, 0, 0) : "Like",
+                (0, 0, 0, 0, 1) : "Down",
+                (0, 1, 0, 0, 0) : "Up",
+                (0, 1, 1, 1, 1) : "Close",
+                (1, 1, 1, 1, 1) : "Close"}
+
+
+# Gesture recognition config
+RECOGNITION_SPEED_MULTIPLIER=1.5 # Recognition multiplier, range 1 - 5 where. Where larger value means longer recognition (up to 5 seconds per gesture) but better definition.
