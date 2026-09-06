@@ -49,7 +49,9 @@ GESTURES_V2 ={  (1, 0, 0, 0, 0) : "Like",
                 (0, 0, 0, 0, 1) : "Down",
                 (0, 1, 0, 0, 0) : "Up",
                 (0, 1, 1, 1, 1) : "Close",
-                (1, 1, 1, 1, 1) : "Close"}
+                (1, 1, 1, 1, 1) : "Close",
+                (0, 1, 0, 0, 1) : "Reload",
+                (0, 1, 1, 0, 0) : "Undone"}
 
 
 # Gesture recognition config

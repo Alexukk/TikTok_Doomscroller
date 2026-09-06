@@ -41,6 +41,8 @@ while True:
         config.SHOW_VERSION = not config.SHOW_VERSION
     elif key == ord('h'):
         config.SHOW_HELP = not config.SHOW_HELP
+    elif key == ord("r"):
+        init_browser(config.TIKTOK_LINK)
 
 
     current_time = time.time()
@@ -75,7 +77,7 @@ while True:
 
         if fingers == current_gesture:
             current_gesture_counter+=1
-            if current_gesture_counter >= (config.RECOGNITION_SPEED_MULTIPLIER * fps):
+            if current_gesture_counter >= (config.RECOGNITION_SPEED_MULTIPLIER * 30):
                 current_gesture_counter = 0
                 name = process_gesture(tuple(current_gesture))
                 print(f"Name : {name}")
@@ -84,16 +86,22 @@ while True:
 
 
     # Debug & General data overlay
-    if config.SHOW_FPS:
-        fps: float = 1 / (current_time - previous_time)
-        cv2.putText(img, f"Fps: {int(fps)}", (config.TOP_LEFT_ROW_2 if config.SHOW_VERSION else config.TOP_LEFT_ROW_1),cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 0.8, config.NAVY_BLUE, 2)
-        previous_time = current_time
 
-    if config.SHOW_VERSION:
-        cv2.putText(img, f"Version: {config.VERSION}", config.TOP_LEFT_ROW_1, cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 1, config.RED, 4)
-    if config.SHOW_STATS:
-        show_stats(img, begin_time, datetime.now(), 100)
-    if config.SHOW_HELP:
-        show_help(img)
     # Showing the frame
-    cv2.imshow("TikTokDoomscroller", img)
+    if config.SHOW_WEBCAM:
+        if config.SHOW_FPS:
+            fps: float = 1 / (current_time - previous_time)
+            cv2.putText(img, f"Fps: {int(fps)}",
+                        (config.TOP_LEFT_ROW_2 if config.SHOW_VERSION else config.TOP_LEFT_ROW_1),
+                        cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 0.8, config.NAVY_BLUE, 2)
+            previous_time = current_time
+
+        if config.SHOW_VERSION:
+            cv2.putText(img, f"Version: {config.VERSION}", config.TOP_LEFT_ROW_1, cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 1,
+                        config.RED, 4)
+        if config.SHOW_STATS:
+            show_stats(img, begin_time, datetime.now(), 100)
+        if config.SHOW_HELP:
+            show_help(img)
+
+        cv2.imshow("TikTokDoomscroller", img)
