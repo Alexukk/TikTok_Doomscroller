@@ -1,8 +1,10 @@
 import cv2
 import mediapipe as mp
+from fontTools.config import Config
+
 from browser_init import init_browser
 import config
-from src.helpers import show_stats, get_distance, process_gesture
+from src.helpers import show_stats, get_distance, process_gesture, show_help
 from datetime import datetime
 
 video = cv2.VideoCapture(0) # Initializing WebCam usage
@@ -34,6 +36,9 @@ while True:
         config.SHOW_FPS = not config.SHOW_FPS
     elif key == ord('v'):
         config.SHOW_VERSION = not config.SHOW_VERSION
+    elif key == ord('h'):
+        config.SHOW_HELP = not config.SHOW_HELP
+
 
     current_time = time.time()
 
@@ -86,5 +91,7 @@ while True:
         cv2.putText(img, f"Version: {config.VERSION}", config.TOP_LEFT_ROW_1, cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 1, config.RED, 4)
     if config.SHOW_STATS:
         show_stats(img, begin_time, datetime.now(), 100)
+    if config.SHOW_HELP:
+        show_help(img)
     # Showing the frame
     cv2.imshow("TikTokDoomscroller", img)

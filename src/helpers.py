@@ -18,8 +18,12 @@ def get_distance(p1, p2):
 
 
 def show_help(img):
-    pass
-
+    cv2.putText(img, "General Keybinds: ", config.TOP_LEFT_ROW_6, cv2.FONT_HERSHEY_PLAIN, 1.3, config.GREEN, 4)
+    cv2.putText(img, f"Q - Terminate session", config.TOP_LEFT_ROW_7, cv2.FONT_HERSHEY_PLAIN, 1.2, config.GREEN, 4)
+    cv2.putText(img, f"V - toggle version", config.TOP_LEFT_ROW_8, cv2.FONT_HERSHEY_PLAIN, 1.2, config.GREEN, 4)
+    cv2.putText(img, f"F - toggle fps", config.TOP_LEFT_ROW_9, cv2.FONT_HERSHEY_PLAIN, 1.2, config.GREEN, 4)
+    cv2.putText(img, f"S - toggle stats", config.TOP_LEFT_ROW_10, cv2.FONT_HERSHEY_PLAIN, 1.2, config.GREEN, 4)
+    cv2.putText(img, f"H - toggle help", config.TOP_LEFT_ROW_11, cv2.FONT_HERSHEY_PLAIN, 1.2, config.GREEN, 4)
 
 
 def process_gesture(gesture): # Takes an array of fingers activity

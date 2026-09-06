@@ -8,18 +8,26 @@ SHOW_DEBUG_DATA=True # Points and lines between the fingers
 SHOW_FPS=True        # Shows debug data (fps) when toggled
 SHOW_VERSION=True
 SHOW_STATS=True
+SHOW_HELP=False
+
 
 # Coordinates & rows
-TOP_LEFT_ROW_1=(10, 20)
-TOP_LEFT_ROW_2=(10, 40)
-
-TOP_LEFT_ROW_3=(10, 70)
-TOP_LEFT_ROW_4=(10, 90)
-TOP_LEFT_ROW_5=(10, 110)
+TOP_LEFT_ROW_1=(10, 30)
+TOP_LEFT_ROW_2=(10, 50)
+TOP_LEFT_ROW_3=(10, 80)
+TOP_LEFT_ROW_4=(10, 100)
+TOP_LEFT_ROW_5=(10, 120)
+TOP_LEFT_ROW_6=(10, 140)
+TOP_LEFT_ROW_7=(10, 160)
+TOP_LEFT_ROW_8=(10, 180)
+TOP_LEFT_ROW_9=(10, 200)
+TOP_LEFT_ROW_10=(10, 220)
+TOP_LEFT_ROW_11=(10, 240)
 
 # Colors in BGR
 RED=(86, 37, 222)
 DARK_GREEN=(28, 105, 25)
+GREEN=(0, 205, 0)
 NAVY_BLUE=(114, 84, 14)
 
 # Gestures
