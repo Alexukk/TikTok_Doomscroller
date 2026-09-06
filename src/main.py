@@ -24,6 +24,9 @@ begin_time = datetime.now() # necessary for stats
 current_gesture = [0, 0, 0, 0, 0]
 current_gesture_counter = 0
 
+init_browser(config.TIKTOK_LINK)
+config.BROWSER_RUNNING = True
+
 # Main loop
 while True:
     is_cam_running, img = video.read() # Reading one frame per integration

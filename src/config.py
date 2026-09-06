@@ -54,3 +54,8 @@ GESTURES_V2 ={  (1, 0, 0, 0, 0) : "Like",
 
 # Gesture recognition config
 RECOGNITION_SPEED_MULTIPLIER=2 # Recognition multiplier, range 1 - 5 where. Where larger value means longer recognition (up to 5 seconds per gesture) but better definition.
+
+
+# Browser config
+
+BROWSER_RUNNING=False
