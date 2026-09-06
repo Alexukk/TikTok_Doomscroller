@@ -59,5 +59,3 @@ RECOGNITION_SPEED_MULTIPLIER=2 # Recognition multiplier, range 1 - 5 where. Wher
 
 
 # Browser config
-
-BROWSER_RUNNING=False

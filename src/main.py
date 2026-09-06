@@ -4,6 +4,7 @@ from browser_init import init_browser, press_button, keyboard, Key
 import config
 from src.helpers import show_stats, get_distance, process_gesture, show_help
 from datetime import datetime
+import global_variables
 
 video = cv2.VideoCapture(0) # Initializing WebCam usage
 
@@ -23,7 +24,7 @@ current_gesture = [0, 0, 0, 0, 0]
 current_gesture_counter = 0
 
 init_browser(config.TIKTOK_LINK)
-config.BROWSER_RUNNING = True
+global_variables.BROWSER_RUNNING = True
 
 # Main loop
 while True:
@@ -87,6 +88,7 @@ while True:
                     case "Next":
                         press_button(Key.down)
                         print("Next")
+                        global_variables.Videos_counter+=1
                     case "Previous":
                         press_button(Key.up)
                         print("Previous")
@@ -112,7 +114,7 @@ while True:
             cv2.putText(img, f"Version: {config.VERSION}", config.TOP_LEFT_ROW_1, cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 1,
                         config.RED, 4)
         if config.SHOW_STATS:
-            show_stats(img, begin_time, datetime.now(), 100)
+            show_stats(img, begin_time, datetime.now(), global_variables.Videos_counter)
         if config.SHOW_HELP:
             show_help(img)
 
