@@ -13,7 +13,7 @@ SHOW_HELP=False
 
 # Coordinates & rows
 TOP_LEFT_ROW_1=(10, 30)
-TOP_LEFT_ROW_2=(10, 50)
+TOP_LEFT_ROW_2=(10, 55)
 TOP_LEFT_ROW_3=(10, 80)
 TOP_LEFT_ROW_4=(10, 100)
 TOP_LEFT_ROW_5=(10, 120)
@@ -23,6 +23,9 @@ TOP_LEFT_ROW_8=(10, 180)
 TOP_LEFT_ROW_9=(10, 200)
 TOP_LEFT_ROW_10=(10, 220)
 TOP_LEFT_ROW_11=(10, 240)
+TOP_LEFT_ROW_12=(10, 260)
+TOP_LEFT_ROW_13=(10, 280)
+TOP_LEFT_ROW_14=(10, 300)
 
 # Colors in BGR
 RED=(86, 37, 222)
@@ -50,4 +53,4 @@ GESTURES_V2 ={  (1, 0, 0, 0, 0) : "Like",
 
 
 # Gesture recognition config
-RECOGNITION_SPEED_MULTIPLIER=1.5 # Recognition multiplier, range 1 - 5 where. Where larger value means longer recognition (up to 5 seconds per gesture) but better definition.
+RECOGNITION_SPEED_MULTIPLIER=2 # Recognition multiplier, range 1 - 5 where. Where larger value means longer recognition (up to 5 seconds per gesture) but better definition.
