@@ -1,8 +1,6 @@
 import cv2
 import mediapipe as mp
-from fontTools.config import Config
-
-from browser_init import init_browser
+from browser_init import init_browser, press_button, keyboard, Key
 import config
 from src.helpers import show_stats, get_distance, process_gesture, show_help
 from datetime import datetime
@@ -84,6 +82,19 @@ while True:
                     exit(0)
                 elif name == "Reload":
                     init_browser(config.TIKTOK_LINK)
+                    print("Reload")
+                match name:
+                    case "Next":
+                        press_button(Key.down)
+                        print("Next")
+                    case "Previous":
+                        press_button(Key.up)
+                        print("Previous")
+                    case "Like":
+                        press_button('l')
+                        print("Like")
+                    case "Undone":
+                        print("Undone")
         else:
             current_gesture = fingers.copy()
 

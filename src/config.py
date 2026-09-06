@@ -1,6 +1,6 @@
 # General Links and configurations
 TIKTOK_LINK="https://www.tiktok.com/"
-VERSION="0.0.1"
+VERSION="1.0.0 (BETA)"
 
 # Webcam window configuration
 SHOW_WEBCAM=True     # Shows Video captured and processed by webcam
@@ -46,8 +46,8 @@ GESTURES_V1 = [
 
 
 GESTURES_V2 ={  (1, 0, 0, 0, 0) : "Like",
-                (0, 0, 0, 0, 1) : "Down",
-                (0, 1, 0, 0, 0) : "Up",
+                (0, 0, 0, 0, 1) : "Previous",
+                (0, 1, 0, 0, 0) : "Next",
                 (0, 1, 1, 1, 1) : "Undone", # First variation of opened palm
                 (1, 1, 1, 1, 1) : "Undone", # Second variation of opened palm (big finger glitches sometimes)
                 (0, 1, 0, 0, 1) : "Close",
